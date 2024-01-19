@@ -1,10 +1,10 @@
-import { SlashCommandBuilder, ChannelType, TextChannel, EmbedBuilder } from "discord.js"
+Wimport { SlashCommandBuilder, ChannelType, TextChannel, EmbedBuilder } from "discord.js"
 import { SlashCommand } from "../types";
 
 const testCommand: SlashCommand = {
     command: new SlashCommandBuilder()
-        .setName("test")
-        .setDescription("Test command")
+        .setName("Ban Command")
+        .setDescription("With this command, you can ban people")
         .addStringOption(option => {
             return option
                 .setName("content")
@@ -21,10 +21,9 @@ const testCommand: SlashCommand = {
         interaction.reply({
             embeds: [
                 new EmbedBuilder()
-                    .setAuthor({ name: "Response Title" })
-                    .setDescription(`👋 Hi! 
-                    Your ping: ${interaction.client.ws.ping}
-                    Your input: ${options.content}`)
+                    .setAuthor({ name: "You have banned {user}! for {time}" })
+                    .setDescription(` 
+                    Your input: ${options.user, time}`)
             ]
         })
     },
