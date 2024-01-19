@@ -1,14 +1,14 @@
-Wimport { SlashCommandBuilder, ChannelType, TextChannel, EmbedBuilder } from "discord.js"
+import { SlashCommandBuilder, TextChannel, MessageEmbed } from "discord.js";
 import { SlashCommand } from "../types";
 
 const testCommand: SlashCommand = {
     command: new SlashCommandBuilder()
-        .setName("Ban Command")
+        .setName("BanCommand")
         .setDescription("With this command, you can ban people")
         .addStringOption(option => {
             return option
                 .setName("content")
-                .setDescription("this is a parameter for a command")
+                .setDescription("This is a parameter for a command")
                 .setRequired(false);
         }),
     execute: async (interaction) => {
@@ -18,16 +18,16 @@ const testCommand: SlashCommand = {
             if (element.name && element.value) options[element.name] = element.value;
         }
 
+        // Replace {user} and {time} with actual values
+        const embed = new MessageEmbed()
+            .setAuthor("You have banned {user}! for {time}")
+            .setDescription(`Your input: ${options.user}`);
+
         interaction.reply({
-            embeds: [
-                new EmbedBuilder()
-                    .setAuthor({ name: "You have banned {user}! for {time}" })
-                    .setDescription(` 
-                    Your input: ${options.user, time}`)
-            ]
-        })
+            embeds: [embed],
+        });
     },
     cooldown: 3
-}
+};
 
 export default testCommand;
