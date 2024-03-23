@@ -21,9 +21,8 @@ const testCommand: SlashCommand = {
         interaction.reply({
             embeds: [
                 new EmbedBuilder()
-                    .setAuthor({ name: "Response Title" })
-                    .setDescription(`👋 Hi! 
-                    Your ping: ${interaction.client.ws.ping}
+                    .setAuthor({ name: "Username" })
+                    .setDescription(`👋 Welcome! 
                     Your input: ${options.content}`)
             ]
         })
