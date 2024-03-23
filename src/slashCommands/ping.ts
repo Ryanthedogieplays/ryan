@@ -10,18 +10,6 @@ const testCommand: SlashCommand = {
                 .setName("Username")
                 .setDescription("Please use your username")
                 .setRequired(false);
-
-            .addStringOption(option => {
-            return option
-                .setName("Time Started")
-                .setDescription("Please state the time you started your shift in military time.")
-                .setRequired(false);
-            
-            .addStringOption(option => {
-            return option
-                .setName("Time Ended")
-                .setDescription("Please state the time you ended your shift in military time.")
-                .setRequired(false);
         }),
     execute: async (interaction) => {
         const options: { [key: string]: string | number | boolean } = {};
