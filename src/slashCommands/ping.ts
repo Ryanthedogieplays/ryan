@@ -7,8 +7,20 @@ const testCommand: SlashCommand = {
         .setDescription("Please state your duty will FULL PROOF that you did")
         .addStringOption(option => {
             return option
-                .setName("Please imput your username")
-                .setDescription("this is a parameter for a command")
+                .setName("Username")
+                .setDescription("Please use your username")
+                .setRequired(false);
+
+            .addStringOption(option => {
+            return option
+                .setName("Time Started")
+                .setDescription("Please state the time you started your shift in military time.")
+                .setRequired(false);
+            
+            .addStringOption(option => {
+            return option
+                .setName("Time Ended")
+                .setDescription("Please state the time you ended your shift in military time.")
                 .setRequired(false);
         }),
     execute: async (interaction) => {
