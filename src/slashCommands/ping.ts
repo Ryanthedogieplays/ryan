@@ -3,7 +3,7 @@ import { SlashCommand } from "../types";
 
 const testCommand: SlashCommand = {
     command: new SlashCommandBuilder()
-        .setName("DutyState")
+        .setName("Duty State")
         .setDescription("Please state your duty will FULL PROOF that you did")
         .addStringOption(option => {
             return option
