@@ -3,11 +3,11 @@ import { SlashCommand } from "../types";
 
 const testCommand: SlashCommand = {
     command: new SlashCommandBuilder()
-        .setName("test")
-        .setDescription("Test command")
+        .setName("DutyState")
+        .setDescription("Please state your duty will FULL PROOF that you did")
         .addStringOption(option => {
             return option
-                .setName("content")
+                .setName("Please imput your username")
                 .setDescription("this is a parameter for a command")
                 .setRequired(false);
         }),
@@ -21,8 +21,8 @@ const testCommand: SlashCommand = {
         interaction.reply({
             embeds: [
                 new EmbedBuilder()
-                    .setAuthor({ name: "Username" })
-                    .setDescription(`👋 Welcome! 
+                    .setAuthor({ name: "Duty State" })
+                    .setDescription(`Thank you for sumbitting your duty state, our high command will deal with your state! 
                     Your input: ${options.content}`)
             ]
         })
